@@ -76,14 +76,19 @@ namespace DEINT_REST_Demo.MVVM.ViewModels
                 var response = await client.PostAsync(url, content);
             });
 
-            UpdateUserCommand = new Command(() => {
-                
+            UpdateUserCommand = new Command(async () => {
+                var user = _users.FirstOrDefault(x => x.id.Equals("10"));
+                var url = $"{urlbase}/users/10";
+                user.name = "Silvia";
+                string json = JsonSerializer.Serialize<User>(user, _serializerOptions);
+                StringContent content = new StringContent(json);
+                var response = await client.PutAsync(url, content);
             });
 
-            DeleteUserCommand = new Command(() => {
-                
+            DeleteUserCommand = new Command(async () => {
+                var url = $"{urlbase}/users/15";
+                var response = await client.DeleteAsync(url);
             });
-
         }
     }
 }
