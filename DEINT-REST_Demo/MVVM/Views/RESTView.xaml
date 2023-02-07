@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DEINT_REST_Demo.MVVM.Views.RESTView"
+             Title="RESTView">
+    <VerticalStackLayout VerticalOptions="Center" Spacing="20" Padding="40">
+        <Button Command="{Binding GetAllUsersCommand}" Text="Consulatar todos los usuarios"/>
+        <Button Command="{Binding GetUserCommand}" Text="Consulatar usuario 25"/>
+        <Button Command="{Binding InsertUserCommand}" Text="Insertar usuario"/>
+        <Button Command="{Binding UpdateUserCommand}" Text="Actualizar usuario 10"/>
+        <Button Command="{Binding DeleteUserCommand}" Text="Borrar usuario 15"/>
+    </VerticalStackLayout>
+</ContentPage>
